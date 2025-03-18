@@ -13,9 +13,9 @@ public class Question08 {
             } else {
                 if (stack.isEmpty()) {
                     return false;
-                } else {
+                } //else {
                     stack.pop();
-                }
+                //}
             }
 
         }
