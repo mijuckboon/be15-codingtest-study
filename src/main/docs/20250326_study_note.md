@@ -30,7 +30,7 @@ public class Max {
     }
 
     public static int getMax(int[] nums) { // 스트림
-        return Arrays.stream(array)
+        return Arrays.stream(nums)
                 .max()
                 .orElse(Integer.MIN_VALUE);
     }
