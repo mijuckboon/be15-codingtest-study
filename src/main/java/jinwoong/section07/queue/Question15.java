@@ -11,11 +11,7 @@ import java.util.Queue;
  * 제약 조건: N과 K는 1 이상 1000 이하의 자연수입니다.
  */
 public class Question15 {
-    public static void main(String[] args) {
-        System.out.println(solution(5,2)); // expected: 3
-    }
-
-    private static int solution(int n, int k) {
+    int solution(int n, int k) {
         Queue<Integer> queue = new LinkedList<>();
         for (int i = 1; i <= n; i++) {
             queue.offer(i);

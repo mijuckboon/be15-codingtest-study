@@ -6,10 +6,10 @@ import java.util.Stack;
  * 10진수를 입력받아 2진수로 변환해 반환하는 solution( ) 함수를 구현하세요.
  * <p>
  * 제약조건 <br/>
- * decimal은 1이상 10억 미만의 자연수
+ * decimal은 1 이상 10억 미만의 자연수
  */
 public class Question09 {
-    private static String solution(int num) {
+    String solution(int num) {
         Stack <Integer> stack = new Stack<>();
         StringBuilder sb = new StringBuilder();
         while (num > 0) {
@@ -23,9 +23,5 @@ public class Question09 {
         return sb.toString();
     }
 
-    public static void main(String[] args) {
-        System.out.println(solution(10));
-        System.out.println(solution(27));
-        System.out.println(solution(12345));
-    }
+
 }

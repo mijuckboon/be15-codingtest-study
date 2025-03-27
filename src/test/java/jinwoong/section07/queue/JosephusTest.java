@@ -1,4 +1,4 @@
-package jinwoong.section05.array;
+package jinwoong.section07.queue;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,27 +9,29 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-class Question02Test {
-    Question02 question;
+/* 요세푸스 문제 - 백준 1158 (https://www.acmicpc.net/problem/1158) */
+class JosephusTest {
+
+    Josephus josephus;
 
     @BeforeEach
     void setUp() {
-        question = new Question02();
+        josephus = new Josephus();
     }
 
     static Stream<Arguments> provideTestCases() {
         return Stream.of(
-                Arguments.arguments(new int[] {4, 2, 2, 1, 3, 4}, new int[]{4, 3, 2, 1}),
-                Arguments.arguments(new int[] {2, 1, 1, 3, 2, 5, 4}, new int[]{5, 4, 3, 2, 1})
+                Arguments.arguments(7, 3, "<3, 6, 2, 7, 5, 1, 4>"),
+                Arguments.arguments(5, 2, "<2, 4, 1, 5, 3>")
         );
     }
 
-    @DisplayName("Question02 테스트")
+    @DisplayName("요세푸스 테스트")
     @ParameterizedTest
     @MethodSource("provideTestCases")
-    void testSolution(int[] arr, int[] expected) {
-        int[] result = question.solution(arr);
-        Assertions.assertArrayEquals(expected, result);
+    void testSolution(int n, int k, String expected) {
+        String result = josephus.solution(n, k);
+        Assertions.assertEquals(expected, result);
     }
 
 }

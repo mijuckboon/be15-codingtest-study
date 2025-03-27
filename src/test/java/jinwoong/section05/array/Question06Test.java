@@ -9,28 +9,26 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-class Question01Test {
-    Question01 question;
+class Question06Test {
+    Question06 question;
 
     @BeforeEach
     void setUp() {
-        question = new Question01();
+        question = new Question06();
     }
 
     static Stream<Arguments> provideTestCases() {
         return Stream.of(
-                Arguments.arguments(new int[]{1, -5, 2, 4, 3}, new int[] {-5, 1, 2, 3, 4}),
-                Arguments.arguments(new int[]{2, 1, 1, 3, 2, 5, 4}, new int[] {1, 1, 2, 2, 3, 4, 5}),
-                Arguments.arguments(new int[]{6, 1, 7}, new int[] {1, 6, 7})
-
+                Arguments.arguments(5, new int[] {2, 1, 2, 6, 2, 4, 3, 3}, new int[] {3, 4, 2, 1, 5}),
+                Arguments.arguments(4, new int[] {4, 4, 4, 4, 4}, new int[] {4, 1, 2, 3})
         );
     }
 
-    @DisplayName("Question01 테스트")
+    @DisplayName("Question06 테스트")
     @ParameterizedTest
     @MethodSource("provideTestCases")
-    void testSolution(int[] arr, int[] expected) {
-        int[] result = question.solution(arr);
+    void testSolution(int N, int[] stages, int[] expected) {
+        int[] result = question.solution(N, stages);
         Assertions.assertArrayEquals(expected, result);
     }
 

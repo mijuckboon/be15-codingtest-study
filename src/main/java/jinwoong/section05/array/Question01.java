@@ -11,18 +11,16 @@ import java.util.Arrays;
  *
  */
 public class Question01 {
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(solution(new int[]{1, -5, 2, 4, 3})));
-        System.out.println(Arrays.toString(solution(new int[]{2, 1, 1, 3, 2, 5, 4})));
-        System.out.println(Arrays.toString(solution(new int[]{6, 1, 7})));
+    int[] solution(int[] arr) { // private 메서드를 보호하며 테스트
+        return capsule(arr);
     }
 
-    private static int[] solution(int[] arr) {
+    private int[] capsule(int[] arr) {
         Arrays.sort(arr);
         return arr;
     }
 
-    private static int[] solution2(int[] arr) { // 원본 배열 유지
+    int[] solution2(int[] arr) { // 원본 배열 유지
         int[] clone = arr.clone();
         Arrays.sort(clone);
         return clone;

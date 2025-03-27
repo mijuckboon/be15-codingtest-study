@@ -26,7 +26,7 @@ public class Question08 {
     }
 
     boolean solution2(String s) {
-        // 카운터 변수: 효율은 좋으나 정합성 떨어짐
+        // 카운터 변수: 효율은 좋으나 정합성, 유지보수성 떨어짐 (괄호 2개 이상이면 못 쓰는 코드)
         int count = 0;
 
         for (int i = 0; i < s.length(); i++) {

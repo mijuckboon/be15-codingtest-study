@@ -1,4 +1,4 @@
-package jinwoong.section05.array;
+package jinwoong.section06.stack;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,27 +9,30 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-class Question02Test {
-    Question02 question;
+class Question08Test {
+    Question08 question;
 
     @BeforeEach
     void setUp() {
-        question = new Question02();
+        question = new Question08();
     }
 
     static Stream<Arguments> provideTestCases() {
         return Stream.of(
-                Arguments.arguments(new int[] {4, 2, 2, 1, 3, 4}, new int[]{4, 3, 2, 1}),
-                Arguments.arguments(new int[] {2, 1, 1, 3, 2, 5, 4}, new int[]{5, 4, 3, 2, 1})
+                Arguments.arguments("()()", true),
+                Arguments.arguments("(())()", true),
+                Arguments.arguments(")()(", false),
+                Arguments.arguments("(()(", false)
         );
     }
 
-    @DisplayName("Question02 테스트")
+
+    @DisplayName("Question08 테스트")
     @ParameterizedTest
     @MethodSource("provideTestCases")
-    void testSolution(int[] arr, int[] expected) {
-        int[] result = question.solution(arr);
-        Assertions.assertArrayEquals(expected, result);
+    void testSolution(String s, boolean expected) {
+        boolean result = question.solution(s);
+        Assertions.assertEquals(expected, result);
     }
 
 }

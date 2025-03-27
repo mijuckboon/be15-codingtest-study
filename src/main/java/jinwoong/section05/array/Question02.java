@@ -11,12 +11,7 @@ import java.util.*;
  * 2. 정수 배열의 각 데이터 값은 -100,000 이상 100,000 이하입니다.
  */
 public class Question02 {
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(solution(new int[]{4, 2, 2, 1, 3, 4})));
-        System.out.println(Arrays.toString(solution(new int[]{2, 1, 1, 3, 2, 5, 4})));
-    }
-
-    private static int[] solution(int[] arr) {
+    int[] solution(int[] arr) {
         Set<Integer> set = new HashSet<>();
         for (int num : arr) {
             set.add(num);
@@ -34,14 +29,14 @@ public class Question02 {
 //                .toArray();
     }
 
-    private static int[] solution1ByAuthor(int[] arr) {
+    int[] solution1ByAuthor(int[] arr) {
         Integer[] result = Arrays.stream(arr).boxed().distinct().toArray(Integer[]::new); // ❶ 중복값 제거
         Arrays.sort(result, Collections.reverseOrder());                                  // ❷ 내림차순 정렬
         return Arrays.stream(result).mapToInt(Integer::intValue).toArray();  // int형 배열로 변경 후 반환
     }
 
     /* IntStream에도 distinct() 메서드가 있음! 위의 코드에서 변형해본 것 */
-    private static int[] solution2(int[] arr) {
+    int[] solution2(int[] arr) {
         return Arrays.stream(arr)
                 .distinct()
                 .boxed()
@@ -50,7 +45,7 @@ public class Question02 {
                 .toArray();
     }
 
-    private static int[] solution2ByAuthor(int[] arr) {
+    int[] solution2ByAuthor(int[] arr) {
         TreeSet<Integer> set = new TreeSet<>(Collections.reverseOrder());
         for (int num : arr) {
             set.add(num);
@@ -66,7 +61,7 @@ public class Question02 {
     }
 
     /* 위의 코드 변형: 스트림 이용 */
-    private static int[] solution3(int[] arr) {
+    int[] solution3(int[] arr) {
         TreeSet<Integer> set = new TreeSet<>(Comparator.reverseOrder());
         for (int num : arr) {
             set.add(num);
