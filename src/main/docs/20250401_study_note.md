@@ -41,6 +41,23 @@ class Main {
 
 #### 문제 13. 크레인 인형 뽑기 게임
 * 각각의 lane을 스택으로 만들지 않아도 풀 수 있음
+* 제네릭 배열 생성 불가
+```java
+import java.util.List;
+import java.util.ArrayList;
+
+class GenericArrayCreation {
+    /* generic 배열 생성 불가 */
+    /* 1. cannot create array with '<>' */
+//    List<Integer>[] arrayOfList = new ArrayList<>[5];
+    /* 2. generic array creation */
+//    List<Integer>[] arrayOfIntegerList = new ArrayList<Integer>[5];
+    /* 대안 1: 리스트로 선언 */
+    List<List<Integer>> listOfList = new ArrayList<>();
+    /* 대안 2: generic 없는 ArrayList 배열로 선언 */
+    List<Integer>[] arrayOfList = new ArrayList[5]; 
+}
+```
 
 #### 문제 14. 표 편집
 * 아이디어 떠올리기 어려운 문제
@@ -52,3 +69,6 @@ class Main {
 * 코드에서는 사실상 큐가 전혀 쓰이지 않음
   * `add`하고 순회하며 출력 -> 리스트로 대체 가능
   * `문제 분석하고 풀기`에서 큐 등장
+
+#### 문제 17. 카드 뭉치
+* `Arrays.asList()` 쓰면 좀 깔끔
