@@ -16,6 +16,7 @@
      * 아래와 같이 `Queue`로 변수 선언 시 Queue에 필요한 메서드만 활용 가능 (Recall. OOP 3대 특징 > 다형성)
 ```java
 import java.util.ArrayDeque;
+import java.util.Queue;
 
 class Main {
     Queue<Integer> queue = new ArrayDeque<>();
