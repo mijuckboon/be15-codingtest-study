@@ -19,9 +19,9 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 class Main {
+    /* ArrayDeque<E> implements Deque<E>
+     * Deque<E> extends Queue<E> */
     Queue<Integer> queue = new ArrayDeque<>();
-    // ArrayDeque<E> implements Deque<E>
-    // Deque<E> extends Queue<E>
 }
 ```
 
@@ -46,16 +46,18 @@ class Main {
 import java.util.List;
 import java.util.ArrayList;
 
-class GenericArrayCreation {
-    /* generic 배열 생성 불가 */
-    /* 1. cannot create array with '<>' */
+public class GenericArrayCreation {
+    public static void main(String[] args) {
+        /* generic 배열 생성 불가 */
+        /* 1. cannot create array with '<>' */
 //    List<Integer>[] arrayOfList = new ArrayList<>[5];
-    /* 2. generic array creation */
+        /* 2. generic array creation */
 //    List<Integer>[] arrayOfIntegerList = new ArrayList<Integer>[5];
-    /* 대안 1: 리스트로 선언 */
-    List<List<Integer>> listOfList = new ArrayList<>();
-    /* 대안 2: generic 없는 ArrayList 배열로 선언 */
-    List<Integer>[] arrayOfList = new ArrayList[5]; 
+        /* 대안 1: 리스트로 선언 */
+        List<List<Integer>> listOfList = new ArrayList<>();
+        /* 대안 2: generic 없는 ArrayList 배열로 선언 */
+        List<Integer>[] arrayOfList = new ArrayList[5];
+    }
 }
 ```
 
