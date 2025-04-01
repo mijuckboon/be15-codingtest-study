@@ -1,4 +1,4 @@
-# Study Note - 1회차
+# Study Note - 2회차
 * 일시: 2025.04.01(화) 18:00 - 18:40
 * 주제: Section 06. Stack, 07. Queue
 
