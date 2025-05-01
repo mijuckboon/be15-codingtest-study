@@ -36,7 +36,7 @@ class Question30Test {
     }
 
     @DisplayName("Question25 테스트")
-    @ParameterizedTest
+    @ParameterizedTest(name="test {index}: k={0}, operations={1}")
     @MethodSource("provideTestCases")
     void testSolution(int k, int[][] operations, boolean[] expected) {
         boolean[] result = question.solution(k, operations);
