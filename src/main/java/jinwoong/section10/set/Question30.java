@@ -57,6 +57,8 @@ public class Question30 {
             }
         }
 
+        /* boolean은 mapToBoolean 같은거 없음
+         * Boolean[] 반환: results.toArray(Boolean[]::new) */
         boolean[] unboxed = new boolean[results.size()];
         for (int i = 0; i < unboxed.length; i++) {
             unboxed[i] = results.get(i);
