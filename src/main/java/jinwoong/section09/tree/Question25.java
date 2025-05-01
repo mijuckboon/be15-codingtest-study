@@ -5,6 +5,8 @@ public class Question25 {
      * 전위 순회, 중위 순회, 휘위 순회 결과를 반환
      * @param nodes 이진 트리를 표현한 배열
      * @return 순회 결과 리스트
+     * 노드의 개수: 1개 이상 1,000개 이하
+     * 노드값은 정수형이며 중복되지 않음
      */
     String[] solution(int[] nodes) {
         String[] results = new String[3];
