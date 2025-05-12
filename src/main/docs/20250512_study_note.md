@@ -49,4 +49,4 @@
 #### 문제 33. 섬 연결하기
 * 최소 신장 트리(MST) 문제
   * [방법 1] Kruskal's Algorithm: union-find 기반
-  * [방법 2] Prim Algorithm: 그래프 탐색 기반
+  * [방법 2] Prim's Algorithm: 그래프 탐색 기반
