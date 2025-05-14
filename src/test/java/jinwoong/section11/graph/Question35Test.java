@@ -1,6 +1,6 @@
-package jinwoong.section10.set;
+package jinwoong.section11.graph;
 
-import jinwoong.section09.tree.Question25;
+import jinwoong.section10.set.Question30;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -12,35 +12,36 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Question30Test {
-    Question30 question;
+class Question35Test {
+    Question35 question;
 
     @BeforeEach
     void setUp() {
-        question = new Question30();
+        question = new Question35();
     }
 
     static Stream<Arguments> provideTestCases() {
         return Stream.of(
                 Arguments.arguments(
-                        3,
-                        new int[][] {{0, 0, 1}, {0, 1, 2}, {1, 1, 2}},
-                        new boolean[] {true}
+                        new int[][] {{1, 2}, {1, 3}, {2, 4}, {2, 5}, {3, 6}, {3, 7}, {4, 8}, {5, 8}, {6, 9}, {7, 9}},
+                        1,
+                        9,
+                        new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9}
                 ),
                 Arguments.arguments(
-                        4,
-                        new int[][] {{0, 0, 1}, {1, 1, 2}, {0, 1, 2}, {1, 0 ,2}},
-                        new boolean[] {false, true}
+                        new int[][] {{1, 3}, {3, 4}, {3, 5}, {5, 2}},
+                        1,
+                        5,
+                        new int[] {1, 3, 4, 5, 2}
                 )
         );
     }
 
-    @DisplayName("Question30 테스트")
+    @DisplayName("Question35 테스트")
     @ParameterizedTest(name="test {index}: k={0}, operations={1}")
     @MethodSource("provideTestCases")
-    void testSolution(int k, int[][] operations, boolean[] expected) {
-        boolean[] result = question.solution(k, operations);
+    void testSolution(int[][] graph, int start, int n, int[] expected) {
+        int[] result = question.solution(graph, start, n);
         Assertions.assertArrayEquals(expected, result);
     }
-
 }
