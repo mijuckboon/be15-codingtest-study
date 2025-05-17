@@ -12,32 +12,32 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Question35Test {
-    Question35 question;
+class Question36Test {
+    Question36 question;
 
     @BeforeEach
     void setUp() {
-        question = new Question35();
+        question = new Question36();
     }
 
     static Stream<Arguments> provideTestCases() {
         return Stream.of(
                 Arguments.arguments(
-                        new int[][] {{1, 2}, {1, 3}, {2, 4}, {2, 5}, {3, 6}, {3, 7}, {4, 8}, {5, 8}, {6, 9}, {7, 9}},
-                        1,
-                        9,
-                        new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9}
+                        new int[][] {{0, 1, 9}, {0, 2, 3}, {1, 0, 5}, {2, 1, 1}},
+                        0,
+                        3,
+                        new int[] {0, 4, 3}
                 ),
                 Arguments.arguments(
-                        new int[][] {{1, 3}, {3, 4}, {3, 5}, {5, 2}},
-                        1,
-                        5,
-                        new int[] {1, 3, 4, 5, 2}
+                        new int[][] {{0, 1, 1}, {1, 2, 5}, {2, 3, 1}},
+                        0,
+                        4,
+                        new int[] {0, 1, 6, 7}
                 )
         );
     }
 
-    @DisplayName("Question35 테스트")
+    @DisplayName("Question36 테스트")
     @ParameterizedTest(name="test {index}: graph={0}, start={1}, n={2}")
     @MethodSource("provideTestCases")
     void testSolution(int[][] graph, int start, int n, int[] expected) {

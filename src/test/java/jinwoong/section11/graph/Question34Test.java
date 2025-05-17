@@ -38,7 +38,7 @@ class Question34Test {
     }
 
     @DisplayName("Question34 테스트")
-    @ParameterizedTest(name="test {index}: k={0}, operations={1}")
+    @ParameterizedTest(name="test {index}: graph={0}, start={1}, n={2}")
     @MethodSource("provideTestCases")
     void testSolution(int[][] graph, int start, int n, int[] expected) {
         int[] result = question.solution(graph, start, n);
