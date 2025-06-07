@@ -34,9 +34,16 @@ public class Question44 {
         int boxRow = row / 3;
         int boxCol = col / 3;
 
-        return Arrays.stream(board).map(b -> new int[]{b[boxCol * 3], b[boxCol * 3 + 1], b[boxCol * 3 + 2]})
+        return Arrays.stream(new int[][]{
+                                board[boxRow * 3],
+                                board[boxRow * 3 + 1],
+                                board[boxRow * 3 + 2]
+                        }
+                )
                 .anyMatch(x ->
-                        x[boxRow * 3] == num || x[boxRow * 3 + 1] == num || x[boxRow * 3 + 2] == num // 중괄호 사용 시 "return" 필요
+                              x[boxCol * 3] == num
+                           || x[boxCol * 3 + 1] == num
+                           || x[boxCol * 3 + 2] == num
                 );
     }
 
