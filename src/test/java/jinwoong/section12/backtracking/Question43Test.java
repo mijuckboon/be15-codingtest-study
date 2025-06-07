@@ -23,27 +23,25 @@ class Question43Test {
                 Arguments.arguments(
                         5,
                         List.of(
-                                new int[]{1, 2, 3, 4},
-                                new int[]{1, 4, 5},
-                                new int[]{2, 3, 5}
+                                List.of(1, 2, 3, 4),
+                                List.of(1, 4, 5),
+                                List.of(2, 3, 5)
                         )
                 ),
                 Arguments.arguments(
                         2,
-                        List.of(
-                                new int[]{}
-                        )
+                        List.of()
                 ),
                 Arguments.arguments(
                         7,
                         List.of(
-                                new int[]{1, 2, 3, 4},
-                                new int[]{1, 2, 7},
-                                new int[]{1, 3, 6},
-                                new int[]{1, 4, 5},
-                                new int[]{2, 3, 5},
-                                new int[]{3, 7},
-                                new int[]{4, 6}
+                                List.of(1, 2, 3, 4),
+                                List.of(1, 2, 7),
+                                List.of(1, 3, 6),
+                                List.of(1, 4, 5),
+                                List.of(2, 3, 5),
+                                List.of(3, 7),
+                                List.of(4, 6)
                         )
                 )
         );
