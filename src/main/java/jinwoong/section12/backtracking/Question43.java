@@ -33,8 +33,9 @@ public class Question43 {
 
         for (int i = begin; i <= n; i++) {
             if (sum + i <= TARGET) {
-                combination.add(i);
-                backtrack(sum + i, combination, i + 1, validCombinations, n);
+                List<Integer> addedCombination = new ArrayList<>(combination);
+                addedCombination.add(i);
+                backtrack(sum + i, addedCombination, i + 1, validCombinations, n);
             }
         }
     }
