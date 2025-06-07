@@ -31,8 +31,8 @@ public class Question44 {
     }
 
     private static boolean isInBox(int num, int row, int col, int[][] board) {
-        int boxRow = (row / 3) * 3;
-        int boxCol = (col / 3) * 3;
+        int boxRow = row / 3;
+        int boxCol = col / 3;
 
         return Arrays.stream(board).map(b -> new int[]{b[boxCol * 3], b[boxCol * 3 + 1], b[boxCol * 3 + 2]})
                 .anyMatch(x ->
