@@ -51,18 +51,11 @@ public class Question44 {
         return null;
     }
 
-
-    /**
-     * 스도쿠 퍼즐
-     *
-     * @param board 주어진 스도쿠 보드 (완성할 수 있음)
-     * @return 완성된 스도쿠 보드
-     */
-    public int[][] solution(int[][] board) {
+    private boolean solve(int[][] board) {
         Cell emptyCell = emptyPosition(board);
 
         if (emptyCell == null) {
-            return board;
+            return true;
         }
 
         int row = emptyCell.row;
@@ -72,14 +65,24 @@ public class Question44 {
             if (isValid(num, row, col, board)) {
                 board[row][col] = num;
 
-                if (emptyPosition(board) != null) {
-                    solution(board);
+                if (solve(board)) {
+                    return true;
                 }
-
-                // 가능한 숫자가 없으면 다시 0으로 되돌림
                 board[row][col] = 0;
             }
         }
+        return false;
+    }
+
+
+    /**
+     * 스도쿠 퍼즐
+     *
+     * @param board 주어진 스도쿠 보드 (완성할 수 있음)
+     * @return 완성된 스도쿠 보드
+     */
+    public int[][] solution(int[][] board) {
+        solve(board);
         return board;
     }
 }
