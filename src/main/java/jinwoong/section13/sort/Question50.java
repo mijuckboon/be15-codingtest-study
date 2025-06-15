@@ -1,4 +1,4 @@
-package jinwoong.section13.sort.section12.backtracking;
+package jinwoong.section13.sort;
 
 public class Question50 {
     /**

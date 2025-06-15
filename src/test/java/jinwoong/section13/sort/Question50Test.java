@@ -1,6 +1,5 @@
-package jinwoong.section13.sort.section12.backtracking;
+package jinwoong.section13.sort;
 
-import jinwoong.section12.backtracking.Question43;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -8,10 +7,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.List;
 import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class Question50Test {
     Question50 question;
