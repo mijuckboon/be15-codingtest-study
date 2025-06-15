@@ -19,15 +19,15 @@ public class Question51 {
         while (i < arr1.length && j < arr2.length) {
             if (arr1[i] <= arr2[j]) {
                 merged[k] = arr1[i];
-
+                i += 1;
+                k += 1;
+                continue;
             }
             if (arr1[i] > arr2[j]) {
                 merged[k] = arr2[j];
+                j += 1;
+                k += 1;
             }
-
-            i += 1;
-            j += 1;
-            k += 1;
         }
 
         /* 위의 과정에서 채워지지 않은 남은 부분 처리 */
