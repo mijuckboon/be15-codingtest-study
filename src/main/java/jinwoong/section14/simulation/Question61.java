@@ -49,4 +49,38 @@ public class Question61 {
 
         return snail;
     }
+
+    public int[][] solution2(int n) { // 그래프 탐색 ver (gpt)
+        int[][] snail = new int[n][n];
+        boolean[][] visited = new boolean[n][n];
+
+        // 우, 하, 좌, 상
+        int[] dr = {0, 1, 0, -1};
+        int[] dc = {1, 0, -1, 0};
+
+        int row = 0, col = 0, dir = 0;
+
+        for (int i = 1; i <= n * n; i++) {
+            snail[row][col] = i;
+            visited[row][col] = true;
+
+            int nextRow = row + dr[dir];
+            int nextCol = col + dc[dir];
+
+            if (!isValid(nextRow, nextCol, n, visited)) {
+                dir = (dir + 1) % 4;
+                nextRow = row + dr[dir];
+                nextCol = col + dc[dir];
+            }
+
+            row = nextRow;
+            col = nextCol;
+        }
+
+        return snail;
+    }
+
+    private boolean isValid(int row, int col, int size, boolean[][] visited) {
+        return row >= 0 && row < size && col >= 0 && col < size && !visited[row][col];
+    }
 }

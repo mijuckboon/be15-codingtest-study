@@ -48,4 +48,12 @@ class Question61Test {
         Assertions.assertArrayEquals(expected, result);
     }
 
+    @DisplayName("Question61 테스트 - 그래프 탐색")
+    @ParameterizedTest(name = "test {index}: n={0}")
+    @MethodSource("provideTestCases")
+    void testSolution2(int n, int[][] expected) {
+        int[][] result2 = question.solution2(n);
+        Assertions.assertArrayEquals(expected, result2);
+    }
+
 }
