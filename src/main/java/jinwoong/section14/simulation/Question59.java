@@ -18,23 +18,29 @@ public class Question59 {
     int[][] solution(int[][] arr, int n) {
         int len = arr.length;
 
-//        int[][] prev = new int[len][len];
-//        for (int row = 0; row < len; row++) {
-//            for (int col = 0; col < len; col++) {
-//                prev[row][col] = arr[row][col];
-//            }
-//        }
-//
-//        int[][] result = new int[len][len];
+        int[][] prev = new int[len][len];
+        for (int row = 0; row < len; row++) {
+            for (int col = 0; col < len; col++) {
+                prev[row][col] = arr[row][col];
+            }
+        }
+
+        int[][] result = new int[len][len];
 
         for (int rep = 0; rep < n; rep++) {
             for (int row = 0; row < len; row++) {
                 for (int col = 0; col < len; col++) {
-                    arr[col][len - 1 - row] = arr[row][col];
+                    result[col][len - 1 - row] = prev[row][col];
                 }
             }
         }
 
-        return arr;
+        for (int row = 0; row < len; row++) {
+            for (int col = 0; col < len; col++) {
+                prev[row][col] = result[row][col];
+            }
+        }
+
+        return result;
     }
 }
