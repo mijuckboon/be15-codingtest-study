@@ -33,11 +33,12 @@ public class Question59 {
                     result[col][len - 1 - row] = prev[row][col];
                 }
             }
-        }
 
-        for (int row = 0; row < len; row++) {
-            for (int col = 0; col < len; col++) {
-                prev[row][col] = result[row][col];
+
+            for (int row = 0; row < len; row++) {
+                for (int col = 0; col < len; col++) {
+                    prev[row][col] = result[row][col];
+                }
             }
         }
 
