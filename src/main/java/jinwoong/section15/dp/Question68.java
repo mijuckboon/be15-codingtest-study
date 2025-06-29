@@ -16,6 +16,7 @@ public class Question68 {
             for (int j = i - 1; j >= 0; j--) {
                 if (nums[j] < nums[i - 1]) {
                     lis[i] = lis[j] + 1;
+                    break;
                 }
             }
 
