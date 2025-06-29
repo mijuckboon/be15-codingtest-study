@@ -1,5 +1,7 @@
 package jinwoong.section15.dp;
 
+import java.util.Arrays;
+
 public class Question68 {
     /**
      * LIS 길이 계산하기
@@ -23,6 +25,6 @@ public class Question68 {
 
         }
 
-        return lis[nums.length];
+        return Arrays.stream(lis).max().getAsInt();
     }
 }
