@@ -30,14 +30,17 @@
   - `split(\\},\\{)` 형태로 모두 이스케이프 해주는 것이 가장 안전
 
 #### 2. `collect(Collectors.toList())` vs `toList()`
-- 공통점
-  - 스트림 -> 리스트 변환 방법
+- `collect(Collectors.toList())`
   - `import java.util.stream.*` 필요
-    - 각각 `import java.util.stream.Collectors`, `import java.util.stream.Stream` 소속
-    - `java.util.*` 만으로 import 해오지 못함 (패키지 한 단계 더 들어가기 때문)
-- 차이점
-  - `collect(Collectors.toList())`: Java 8+에서 사용 가능, 가변 리스트 반환
-  - `toList()`: Java 16+에서 사용 가능, 불변 리스트 반환
+    - `import java.util.stream.Collectors` 소속이므로 `java.util.*` 만으로 import 해오지 못함 (패키지 한 단계 더 들어가기 때문)
+  - Java 8+에서 사용 가능
+  - 가변 리스트 반환
+- `toList()`
+  - `import java.util.stream.Stream` 소속
+  - `Stream` 타입을 코드에서 명시적으로 사용하지 않으면 `import java.util.stream.*` 불필요 (컴파일러가 자동으로 인식)
+  - Java 16+에서 사용 가능
+  - 불변 리스트 반환
+    - 내부 구현체는 `java.util.ImmutableCollections.ListN` 등이며, 수정 시 `java.lang.UnsupportedOperationException` 예외 발생
 
 ### 4. 문제 풀이 요약
 #### 문제 56. 튜플
