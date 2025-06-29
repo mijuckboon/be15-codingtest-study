@@ -1,0 +1,26 @@
+package jinwoong.section15.dp;
+
+public class Question68 {
+    /**
+     * LIS 길이 계산하기
+     * <p>
+     * 제약 조건: nums의 각 요소는 -1,000 이상 1,000 이하의 정수
+     * </p>
+     * @param nums 최대 길이 1,000의 정수 배열
+     * @return LIS의 길이
+     */
+    int solution(int[] nums) {
+        int[] lis = new int[nums.length + 1];
+
+        for (int i = 1; i <= lis.length; i++) {
+            for (int j = i - 1; j >= 0; j--) {
+                if (nums[j] < nums[i]) {
+                    lis[i] = lis[j] + 1;
+                }
+            }
+
+        }
+
+        return lis[nums.length];
+    }
+}

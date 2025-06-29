@@ -9,34 +9,32 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-class Question67Test {
-    Question67 question;
+class Question68Test {
+    Question68 question;
 
     @BeforeEach
     void setUp() {
-        question = new Question67();
+        question = new Question68();
     }
 
     static Stream<Arguments> provideTestCases() {
         return Stream.of(
                 Arguments.arguments(
-                        "ABCBDAB",
-                        "BDCAB",
-                        4
+                        new int[] {1, 4, 2, 3, 1, 5, 7, 3},
+                        5
                 ),
                 Arguments.arguments(
-                        "AGGTAB",
-                        "GXTXAYB",
-                        4
+                        new int[] {3, 2, 1},
+                        1
                 )
         );
     }
 
-    @DisplayName("Question67 테스트")
-    @ParameterizedTest(name = "test {index}: str1={0}, str2={1}")
+    @DisplayName("Question68 테스트")
+    @ParameterizedTest(name = "test {index}: nums={0}")
     @MethodSource("provideTestCases")
-    void testSolution(String str1, String str2, int expected) {
-        int result = question.solution(str1, str2);
+    void testSolution(int[] nums, int expected) {
+        int result = question.solution(nums);
         Assertions.assertEquals(expected, result);
     }
 
