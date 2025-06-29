@@ -13,7 +13,7 @@ public class Question68 {
      */
     int solution(int[] nums) {
         int[] lis = new int[nums.length + 1];
-        lis[1] = 1;
+        Arrays.fill(lis, 1);
 
         for (int i = 1; i < lis.length; i++) {
             for (int j = i - 1; j >= 0; j--) {
