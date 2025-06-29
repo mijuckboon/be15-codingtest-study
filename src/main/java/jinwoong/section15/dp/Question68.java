@@ -16,8 +16,8 @@ public class Question68 {
         Arrays.fill(lis, 1);
 
         for (int i = 1; i < lis.length; i++) {
-            for (int j = 0; j < i; j++) {
-                if (nums[i - 1] > nums[j]) {
+            for (int j = 1; j <= i; j++) {
+                if (nums[i - 1] > nums[j - 1]) {
                     lis[i] = Math.max(lis[i], lis[j] + 1);
                 }
             }
