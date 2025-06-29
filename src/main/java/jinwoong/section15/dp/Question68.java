@@ -12,7 +12,7 @@ public class Question68 {
     int solution(int[] nums) {
         int[] lis = new int[nums.length + 1];
 
-        for (int i = 1; i <= lis.length; i++) {
+        for (int i = 1; i < lis.length; i++) {
             for (int j = i - 1; j >= 0; j--) {
                 if (nums[j] < nums[i - 1]) {
                     lis[i] = lis[j] + 1;
